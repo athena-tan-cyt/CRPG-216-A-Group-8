@@ -1,0 +1,25 @@
+'''Program Name: CPRG-216-A
+Description of Program: 
+Group 8 Members: Sid Ali Bounab, Nhi Vuu, Chin-Ying Tan
+Date: February 4, 2026'''
+
+
+
+print("-"*50)
+print('*** Welcome to the Beverage Wholesale Program! ***')
+print("-"*50)
+print('Please select the type of purchase:')
+print('C: Coffee Beans')
+print('T: Tea Boxes')
+#This is the display menu
+customer_order = input('>>> ')
+if (customer_order == 'c'or customer_order =='C'):
+    coffee_weight = float(input('Enter the number of kilograms (kg) of coffee: '))
+elif (customer_order == 't' or customer_order =='T'):
+    tea_boxes = float(input('Enter the number of boxes of tea: '))
+else:
+    print('Invalid input, you should enter c/C or t/T')
+
+if(coffee_weight or tea_boxes>0):
+    province = input('Please enter')
+#Checks quantity
