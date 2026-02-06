@@ -1,6 +1,6 @@
 '''Program Name: CPRG-216-A
 Description of Program: 
-Group 8 Members: Sid Ali Bounab, Nhi Vuu, Chin-Ying Tan
+Authors: Sid Ali Bounab, Nhi Vuu, Chin-Ying Tan
 Date: February 4, 2026'''
 
 
@@ -11,15 +11,30 @@ print("-"*50)
 print('Please select the type of purchase:')
 print('C: Coffee Beans')
 print('T: Tea Boxes')
-#This is the display menu
 customer_order = input('>>> ')
+#The display menu + customer input
+
 if (customer_order == 'c'or customer_order =='C'):
     coffee_weight = float(input('Enter the number of kilograms (kg) of coffee: '))
-elif (customer_order == 't' or customer_order =='T'):
-    tea_boxes = float(input('Enter the number of boxes of tea: '))
-else:
-    print('Invalid input, you should enter c/C or t/T')
+    if coffee_weight > 0:
+        price_coffee = coffee_weight*18.5
+        if coffee_weight >= 25:
+            discount_coffee = price_coffee*0.9
+        elif coffee_weight <= 25:
+            discount_coffee = price_coffee *1
 
-if(coffee_weight or tea_boxes>0):
-    province = input('Please enter')
-#Checks quantity
+    elif coffee_weight <= 0:
+        print('Quantity of coffee should be > 0')
+        exit()
+#if customer orders coffee
+if (customer_order == 't'or customer_order =='T'):
+    tea_boxes = float(input('Enter the number of boxes of tea: '))
+    if tea_boxes > 0:
+        price_tea = tea_boxes      
+    elif tea_boxes <= 0:
+        print('Number of tea boxes should be > 0')
+        exit()
+#if customer orders tea
+
+province = input('Please enter the 2-letter province abbreviation: ')
+print(round(discount_coffee,2))
